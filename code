@@ -1,0 +1,75 @@
+int rNumber=1453;
+   int guess;
+   int step =0;
+   int pCounter;
+   int nCounter;
+   while(pCounter!=4)
+   {
+
+
+
+
+
+        printf("give a 4 digit number \n");
+        scanf("%d",&guess);
+        int tmpR=rNumber;
+        int tmpG=guess;
+        int sRNumber;
+        int sRD;
+        pCounter=0;
+        nCounter=0;
+
+
+
+
+       
+        while(tmpR!=0)
+        {
+            int rDigit;
+            int gDigit;
+
+
+            gDigit=tmpG%10;
+            rDigit=tmpR%10;
+
+            if(gDigit==rDigit)
+            {
+                pCounter++;
+            }
+
+            else
+            {
+               int  sRNumber =rNumber;
+              
+              while(sRNumber!=0)
+               {
+                    sRD=sRNumber%10;
+
+                   if(gDigit==sRD)
+                   {
+                        nCounter--;
+                   }
+
+                    sRNumber/=10;
+
+               }
+
+            }
+
+            tmpG/=10;
+            tmpR/=10;
+
+        }
+          step++;
+
+        if(pCounter==0 && nCounter==0)
+        printf("0 \n");
+        else
+        printf("+%d, %d \n",pCounter,nCounter);
+
+        printf("\n");
+
+
+   }
+
+    printf("cong. you did it! in %d steps,number is %d \n",step,rNumber);
